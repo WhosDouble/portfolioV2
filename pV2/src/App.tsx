@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import Loading from "./componets/Loader";
+import { AnimatedBackground } from "animated-backgrounds";
 import "./App.css";
+import Loading from "./componets/Loader";
+import Navbar from "./componets/Navbar";
+import MainTitle from "./componets/MainTitle";
 
 function App() {
   //useState() for the loader
   const [loading, setLoading] = useState(true);
 
-  //useEffect to add a delay before showing the content
+  //useEffect to add a delay before showing content
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
@@ -21,8 +22,10 @@ function App() {
       {loading ? (
         <Loading />
       ) : (
-        <div className="w-full h-screen bg-black">
-          <h1 className="text-white text-center text-3xl">Test</h1>
+        <div>
+          <AnimatedBackground animationName="auroraBorealis" />
+          <Navbar />
+          <MainTitle />
         </div>
       )}
     </>
