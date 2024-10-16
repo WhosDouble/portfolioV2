@@ -1,7 +1,16 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "compilerOptions": {
+    "composite": true,
+    "jsx": "react-jsx", // Use the React JSX transform
+    "target": "ESNext", // Set the ECMAScript target version
+    "module": "ESNext", // Set the module system
+    "moduleResolution": "node", // Ensure modules resolve correctly
+    "strict": true, // Enable strict mode
+    "esModuleInterop": true, // Support ES module interop
+    "skipLibCheck": true, // Skip type checks for third-party libraries
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true, // Ensure that each file gets its own module scope
+    "types": ["react", "react-dom"] // Include the React and React DOM types
+  },
+  "include": ["src"] // Ensure that TypeScript knows where your source code is
 }
